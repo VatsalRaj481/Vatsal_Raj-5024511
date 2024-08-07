@@ -1,0 +1,49 @@
+package com.library.service;
+
+import com.library.entity.Book;
+import com.library.repository.BookRepository;
+import java.util.List;
+import java.util.Optional;
+
+public class BookService {
+    private BookRepository bookRepository;
+
+    public void setBookRepository(BookRepository bookRepository) {
+        this.bookRepository = bookRepository;
+    }
+
+    // Business logic for books
+
+    // Method to add a new book
+    public Book addBook(Book book) {
+        return bookRepository.save(book);
+    }
+
+    // Method to get all books
+    public List<Book> getAllBooks() {
+        return bookRepository.findAll();
+    }
+
+    // Method to get a book by ID
+    public Optional<Book> getBookById(Long id) {
+        return bookRepository.findById(id);
+    }
+
+    // Method to update an existing book
+    public Book updateBook(Long id, Book bookDetails) {
+        Optional<Book> optionalBook = bookRepository.findById(id);
+        if (optionalBook.isPresent()) {
+            Book book = optionalBook.get();
+            book.setTitle(bookDetails.getTitle());
+            book.setAuthor(bookDetails.getAuthor());
+            book.setIsbn(bookDetails.getIsbn());
+            return bookRepository.save(book);
+        }
+        return null;  // or throw an exception
+    }
+
+    // Method to delete a book by ID
+    public void deleteBook(Long id) {
+        bookRepository.deleteById(id);
+    }
+}
