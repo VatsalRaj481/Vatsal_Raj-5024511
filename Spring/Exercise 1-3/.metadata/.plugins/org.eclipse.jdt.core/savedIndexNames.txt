@@ -1,9 +1,0 @@
-INDEX VERSION 1.134+D:\My folders\DeepSkilling\Week-2\Spring\.metadata\.plugins\org.eclipse.jdt.core
-1842578057.index
-3342327271.index
-1865797976.index
-3323390999.index
-708841534.index
-629507868.index
-468916598.index
-3308566904.index
