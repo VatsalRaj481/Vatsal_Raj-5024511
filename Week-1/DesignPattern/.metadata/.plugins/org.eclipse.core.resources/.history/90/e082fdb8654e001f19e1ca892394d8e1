@@ -1,0 +1,41 @@
+package test;
+
+
+//PayPalAdapter.java (Adapter)
+class PayPalAdapter implements PaymentProcessor {
+ private PayPal paypal;
+
+ public PayPalAdapter(PayPal paypal) {
+     this.paypal = paypal;
+ }
+
+ @Override
+ public void processPayment(double amount) {
+     paypal.makePayment(amount);
+ }
+}
+
+//StripeAdapter.java (Adapter)
+class StripeAdapter implements PaymentProcessor {
+ private Stripe stripe;
+
+ public StripeAdapter(Stripe stripe) {
+     this.stripe = stripe;
+ }
+
+ @Override
+ public void processPayment(double amount) {
+     stripe.makePayment(amount);
+ }
+}
+
+//AdapterPatternTest.java
+public class AdapterPatternTest {
+ public static void main(String[] args) {
+     PaymentProcessor paypalProcessor = new PayPalAdapter(new PayPal());
+     paypalProcessor.processPayment(100.0);
+
+     PaymentProcessor stripeProcessor = new StripeAdapter(new Stripe());
+     stripeProcessor.processPayment(200.0);
+ }
+}

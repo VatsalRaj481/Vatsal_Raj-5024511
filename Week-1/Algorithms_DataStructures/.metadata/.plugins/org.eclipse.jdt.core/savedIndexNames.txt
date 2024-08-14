@@ -1,0 +1,9 @@
+INDEX VERSION 1.134+D:\My folders\DeepSkilling\Week-1\Algorithms_DataStructures\.metadata\.plugins\org.eclipse.jdt.core
+1169506707.index
+2717316604.index
+2052504547.index
+2921698248.index
+3833508784.index
+4207606346.index
+1878341278.index
+1865797976.index
